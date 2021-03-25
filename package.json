@@ -1,0 +1,16 @@
+{
+  "name": "kynux-store",
+  "version": "1.0.0",
+  "description": "The KYNUX GAMES STORE",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "KYNUX GAMES INC.",
+  "license": "ISC",
+  "dependencies": {
+    "update-electron-app": "^2.0.1"
+  }
+}

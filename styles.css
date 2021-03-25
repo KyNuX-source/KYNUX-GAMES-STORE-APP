@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+html, body{
+	font-family: 'Itim', cursive;
+	background-color: #181818;
+	color: white;
+}
+.store, #store{
+	border-radius: 10px;
+}
