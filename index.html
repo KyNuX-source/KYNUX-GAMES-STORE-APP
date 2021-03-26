@@ -1,33 +1,66 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
     <title>KYNUX GAMES STORE</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
 </head>
-<body >
-    <h1>KYNUX GAMES STORE</h1>
 
-    <webview id="store" src="https://kynux.kaiiserni.com/" style="display:inline-flex; width:100%; height:84vh"></webview>
+<body>
 
+    <webview id="store" src="https://kynux.kaiiserni.com/" allowpopups></webview>
+
+
+    <div id="knopkes">
+        <button id="Library">Library</button>
+        <button id="Store">Store</button>
+        <button id="Duckduckgo">DuckDuckGo</button>
+        <button id="yt">Youtube</button>
+        <button id="reddit">Reddit</button>
+        <button id="discord">Discord</button>
+    </div>
 
     <script>
-  onload = () => {
-    const webview = document.querySelector('webview')
-    const indicator = document.querySelector('.indicator')
+        document.getElementById("Library").onclick = Library;
+        document.getElementById("Store").onclick = Store;
+        document.getElementById("Duckduckgo").onclick = Duck;
+        document.getElementById("yt").onclick = yt;
+        document.getElementById("reddit").onclick = Reddit;
+        document.getElementById("discord").onclick = Discord;
+        var webview = document.getElementById('store');
 
-    const loadstart = () => {
-      indicator.innerText = 'loading...'
-    }
+        function Library() {
+            console.log("LIBRARY");
+            webview.loadURL('https://kynux.kaiiserni.com/library');
+        };
 
-    const loadstop = () => {
-      indicator.innerText = ''
-    }
+        function Store() {
+            console.log("STORE");
+            webview.loadURL('https://kynux.kaiiserni.com/');
+        };
 
-    webview.addEventListener('did-start-loading', loadstart)
-    webview.addEventListener('did-stop-loading', loadstop)
-  }
-</script>
+        function Duck() {
+            console.log("DUCKDUCKGO");
+            webview.loadURL('https://duckduckgo.com/');
+        };
+
+        function yt() {
+            console.log("Youtube");
+            webview.loadURL('https://www.youtube.com/');
+        };
+
+        function Reddit() {
+            console.log("Reddit");
+            webview.loadURL('https://www.reddit.com/');
+        };
+
+        function Discord() {
+            console.log("Discord");
+            webview.loadURL('https://www.discord.com/app');
+        };
+    </script>
 </body>
+
 </html>

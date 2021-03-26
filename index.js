@@ -1,23 +1,22 @@
-const { app, BrowserWindow, autoUpdater, dialog } = require('electron')
+const {
+  app,
+  BrowserWindow
+} = require('electron')
 const path = require('path')
-require('update-electron-app')()
-const server = 'https://your-deployment-url.com'
-const url = `${server}/update/${process.platform}/${app.getVersion()}`
 
-autoUpdater.setFeedURL({ url })
-
-
-function createWindow () {
+function createWindow() {
   const win = new BrowserWindow({
     width: 1000,
     height: 700,
     webPreferences: {
       webviewTag: true,
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js'),
+      show: false
     }
   })
-
+  win.removeMenu()
   win.loadFile('index.html')
+  //win.webContents.openDevTools()
 }
 
 app.whenReady().then(() => {
