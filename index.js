@@ -6,12 +6,15 @@ const path = require('path')
 
 function createWindow() {
   const win = new BrowserWindow({
+    frame: true,
     width: 1000,
     height: 700,
+    icon: path.join(__dirname, '/kynuxlogo/kynuxlogo-0.ico'),
     webPreferences: {
       webviewTag: true,
       preload: path.join(__dirname, 'preload.js'),
-      show: false
+      show: false,
+      nodeIntegration: true
     }
   })
   win.removeMenu()

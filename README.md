@@ -5,3 +5,6 @@ To use this:
 `cd KYNUX-GAMES-STORE-APP`
 `npm install`
 `npm start`
+
+To build:
+`npm run build`
