@@ -10,6 +10,7 @@ function createWindow() {
     width: 1000,
     height: 700,
     icon: path.join(__dirname, '/kynuxlogo/kynuxlogo-0.ico'),
+    icon: path.join(__dirname, '/kynuxlogo/kynuxlogo-0.png'),
     webPreferences: {
       webviewTag: true,
       preload: path.join(__dirname, 'preload.js'),
