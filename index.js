@@ -19,7 +19,8 @@ function createWindow() {
     }
   })
   win.removeMenu()
-  win.loadFile('index.html')
+  win.loadFile('loading.html')
+  setTimeout(() => win.loadFile('index.html'), 3000)
   //win.webContents.openDevTools()
 }
 
