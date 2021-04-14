@@ -3,6 +3,8 @@ const {
   BrowserWindow
 } = require('electron')
 const path = require('path')
+//require('electron-reload')(__dirname);
+
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -13,14 +15,15 @@ function createWindow() {
     icon: path.join(__dirname, '/kynuxlogo/kynuxlogo-0.png'),
     webPreferences: {
       webviewTag: true,
-      preload: path.join(__dirname, 'preload.js'),
+      //preload: path.join(__dirname, 'preload.js'),
       show: false,
       nodeIntegration: true
     }
   })
+
   win.removeMenu()
   win.loadFile('loading.html')
-  setTimeout(() => win.loadFile('index.html'), 3000)
+  setTimeout(() => win.loadFile('pages/login.html'), 3000)
   //win.webContents.openDevTools()
 }
 

@@ -10,6 +10,7 @@
 
 <body>
 
+
     <webview id="store" src="https://kynux.kaiiserni.com/" allowpopups></webview>
 
 
@@ -17,18 +18,17 @@
         <button id="Library">Library</button>
         <button id="Store">Store</button>
         <button id="Duckduckgo">DuckDuckGo</button>
-        <button id="yt">Youtube</button>
-        <button id="reddit">Reddit</button>
-        <button id="discord">Discord</button>
+        <button id="back">Back</button>
+        <button id="frwd">Forward</button>
+        <button id="reload">Reload</button>
     </div>
-
     <script>
         document.getElementById("Library").onclick = Library;
         document.getElementById("Store").onclick = Store;
         document.getElementById("Duckduckgo").onclick = Duck;
-        document.getElementById("yt").onclick = yt;
-        document.getElementById("reddit").onclick = Reddit;
-        document.getElementById("discord").onclick = Discord;
+    	document.getElementById("back").onclick = Back;
+    	document.getElementById("reload").onclick = reload;
+    	document.getElementById("frwd").onclick = frwd;
         var webview = document.getElementById('store');
 
         function Library() {
@@ -40,31 +40,25 @@
             console.log("STORE");
             webview.loadURL('https://kynux.kaiiserni.com/');
         };
-
+        Back
         function Duck() {
             console.log("DUCKDUCKGO");
             webview.loadURL('https://duckduckgo.com/');
         };
-
-        function yt() {
-            console.log("Youtube");
-            webview.loadURL('https://www.youtube.com/');
+        function Back() {
+            console.log("Back");
+            webview.goBack();
         };
-
-        function Reddit() {
-            console.log("Reddit");
-            webview.loadURL('https://www.reddit.com/');
+        function reload() {
+            console.log("reload");
+            webview.reload();
         };
-
-        function Discord() {
-            console.log("Discord");
-            webview.loadURL('https://www.discord.com/app');
+        function frwd() {
+            console.log("forward");
+            webview.goForward();
         };
     </script>
-    <script>
-            // You can also require other files to run in this process
-            require('./renderer.js')
-    </script>
+
 </body>
 
 </html>
