@@ -5,6 +5,8 @@ To use this:
 `cd KYNUX-GAMES-STORE-APP`
 `npm install`
 `npm start`
+If npm start doesnt work try:
+`electron ./index.js`
 
 To build:
 `npm run build`
