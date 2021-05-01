@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>KYNUX GAMES STORE</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+</head>
+
+<body>
+
+
+    <webview id="store" src="https://kynux.kaiiserni.com/search/index.html" allowpopups></webview>
+
+
+    <div id="knopkes">
+        <button id="Library">Library</button>
+        <button id="Store">Store</button>
+        <button id="Duckduckgo">Search</button>
+        <button id="back">Back</button>
+        <button id="frwd">Forward</button>
+        <button id="reload">Reload</button>
+    </div>
+    <script>
+        document.getElementById("Library").onclick = Library;
+        document.getElementById("Store").onclick = Store;
+        document.getElementById("Duckduckgo").onclick = Duck;
+    	document.getElementById("back").onclick = Back;
+    	document.getElementById("reload").onclick = reload;
+    	document.getElementById("frwd").onclick = frwd;
+        var webview = document.getElementById('store');
+
+        function Library() {
+            console.log("LIBRARY");
+            webview.loadURL('https://kynux.kaiiserni.com/library');
+        };
+
+        function Store() {
+            console.log("STORE");
+            webview.loadURL('https://kynux.kaiiserni.com/');
+        };
+        Back
+        function Duck() {
+            console.log("DUCKDUCKGO");
+            webview.loadURL('https://kynux.kaiiserni.com/search/index.html');
+        };
+        function Back() {
+            console.log("Back");
+            webview.goBack();
+        };
+        function reload() {
+            console.log("reload");
+            webview.reload();
+        };
+        function frwd() {
+            console.log("forward");
+            webview.goForward();
+        };
+    </script>
+
+</body>
+
+</html>

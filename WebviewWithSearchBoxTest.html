@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>KYNUX GAMES STORE</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+</head>
+
+<body>
+	<form method="get" id="knopkes" action="https://duckduckgo.com/">
+    		<input id="textBox"size="40" name="q">
+    		<input id="button" type="submit" value="Search">
+	</form>
+
+	<webview id="store" src="https://kynux.kaiiserni.com" allowpopups></webview>
+
+
+    <div id="knopkes">
+        <button id="back">Back</button>
+        <button id="frwd">Forward</button>
+        <button id="reload">Reload</button>
+    </div>
+    <script>
+    //
+    	document.getElementById("back").onclick = Back;
+    	document.getElementById("reload").onclick = reload;
+    	document.getElementById("frwd").onclick = frwd;
+    	document.getElementById("button").onClick = search;
+    	let searchBox = document.getElementById("textBox").value;
+        var webview = document.getElementById('store');
+
+        };
+        function Back() {
+            console.log("Back");
+            webview.goBack();
+        };
+        function reload() {
+            console.log("reload");
+            webview.reload();
+        };
+        function frwd() {
+            console.log("forward");
+            webview.goForward();
+        };
+        function search(){
+            console.log(searchBox);
+            //webview.loadURL(searchBox)
+        };
+    </script>
+
+</body>
+
+</html>

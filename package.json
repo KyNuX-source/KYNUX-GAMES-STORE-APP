@@ -1,0 +1,54 @@
+{
+  "name": "KYNUX",
+  "version": "1.0.0",
+  "repository": "https://github.com/KyNuX-source/KYNUX-GAMES-STORE-APP",
+  "description": "The KYNUX GAMES STORE",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "install-app-deps",
+    "start": "npm install && electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.canarycoders.kynux",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "icons/kynuxlogo-0.ico"
+    }
+  },
+  "keywords": [],
+  "author": "KYNUX GAMES INC. <kyaniserwel@gmail.com>",
+  "email": "kyaniserwel@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^12.0.2",
+    "electron-builder": "^22.10.5"
+  },
+  "dependencies": {
+    "electron-context-menu": "^2.5.0",
+    "electron-reload": "^1.5.0",
+    "npm": "^7.9.0"
+  }
+}
